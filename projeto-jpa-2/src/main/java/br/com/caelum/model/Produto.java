@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.Version;
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
 
@@ -40,6 +41,17 @@ public class Produto {
 
 	@ManyToMany
 	private List<Categoria> categorias = new ArrayList<>();
+
+	@Version
+	private Integer versao;
+
+	public Integer getVersao() {
+		return versao;
+	}
+
+	public void setVersao(Integer versao) {
+		this.versao = versao;
+	}
 
 	public List<Categoria> getCategorias() {
 		return categorias;
